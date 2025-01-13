@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'landing/styles.css' %}">
+</head>
+<body>
+    <div class="container py-5">
+        <h1 class="text-center mb-4">Conheça Nosso Produto</h1>
+        <p class="text-center">Venha conhecer nossas novidades e encontrar o tênis que combina com seu estilo e personalidade. Aqui, cada passo importa!</p>
+        <div class="text-center my-4">
+            <img src="{% static 'landing/jordan-4-retro-military-blue-2024-sneakerhype-5.webp' %}" class="img">
+        </div>
+        <h2 class="text-center">Cadastre-se e receba mais informações!</h2>
+        <form method="POST" class="mt-4">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary w-100">Cadastrar</button>
+        </form>
+        <div class="footer">
+            <p>© 2025 ABR. Todos os direitos reservados.</p>
+        </div>
+    </div>
+</body>
+</html>
